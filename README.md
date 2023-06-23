@@ -7,15 +7,18 @@ Throughout the analysis of the "Brand Name Interest Survey" dataset, various fac
 
 ## PART 2: ANALYSIS METHODS AND PROCEDURES
 ### Dataset Description
+
 This dataset is a survey of 10,000 customers in 5 states in the US about their preferences, feedback, and overall evaluations of companies in many different industries. 
+
 ### Data Importing & Transforming
 #### Data quality
+
 - Total number of tables: 01
 - Total line: 100,000
 - Total number of columns: 20
 - Number of columns with missing data: 02 (Interest Coefficient and Marketing Expense)
-- Number of columns containing survey information: 04 (Participant ID; Age; Gender; Household Income)
-- Number of columns containing other information about the surveyed person: 01 (Interest Level)
+- Number of columns containing survey information: 04 (Participant ID, Age, Gender, Household Income)
+- Number of columns containing other information about the surveyors: 01 (Interest Level)
 - Number of columns containing information about the survey: 04 (Survey City; Survey State; Survey Date; Survey Zip)
 - Number of columns containing brand information: 01 (Brand)
 - Number of columns containing questions and survey results: 09
@@ -33,7 +36,9 @@ This dataset is a survey of 10,000 customers in 5 states in the US about their p
 
 #### Data Transforming
 ##### Surveyors Information
+
 Regarding surveyor information, I divide the age and income groups of surveyors into specific groups for analysis. First of all, they divided into 5 groups in terms of the age of survey participants, including Children (from 0 to 9 years old); Teenagers (from 10 to 19 years old); Adults (from 20 to 39 years old), Middle-aged (from 40 to 59 years old) and Elders (over 60 years old).
+
 |Age| Age Group|
 |--------------|-------|
 |0-9| Children|
@@ -60,8 +65,11 @@ The survey was conducted in the following 5 states of the United States. The tab
 | DC | Washington D.C| 
 | VA | Virginia| 
 | DE | Delaware| 
+
 ##### Brand and Industry Information
+
 To facilitate the practical results, I divided 10 brands into 6 major industries as follows:
+
 |Industry |Brand |
 |--------------|-------|
 |Automobile | Mercedes-Benz|
@@ -74,8 +82,11 @@ To facilitate the practical results, I divided 10 brands into 6 major industries
 | Devices | Apple |
 |Technology |Google|
 |Technology | Microsoft |
+
 ##### Survey Results
+
 In order to facilitate convenient data analysis, I have shortened the names of the questions/answers from the survey. The shortened names are listed in the table below:
+
 | Original Names | In-short Names|
 |--------------|-------|
 |What is your first reaction to the brand products? |First Impression|
@@ -86,7 +97,9 @@ In order to facilitate convenient data analysis, I have shortened the names of t
 |How likely would you be to try new products of this brand? |Trial Rate|
 |How likely are you to replace a current brand with this brand? |Replaceability Risk|
 |How likely is it that you would recommend new products from this brand to a friend or colleague?| Recommendation Level|
+
 #### Data Modeling
+
 Splitting and forming 03 main tables from the data table, including:
 - Participant: creates separate tables for the characteristics of survey participants, including Age Group, Gender, Income
 - Survey Results: The group is divided into 3 tables including Survey Date, Survey State, Survey ID
@@ -128,6 +141,7 @@ Using responses that are quantified on scales and metrics calculated by DAX, I a
 4. NPS Analysis
 
 ## PART 3: ANALYSIS RESULTS
+
 ### Dashboard 1: Respondent General Information
 
 ![image](https://github.com/hoangln1508/Brand-Name-Interest-Survey/assets/136893356/40dfc06b-9a32-486c-b6c9-3b0c54d66eac)
