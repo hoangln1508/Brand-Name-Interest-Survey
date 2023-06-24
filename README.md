@@ -129,10 +129,15 @@ In addition, I create DAXs that calculate metrics for analysis, including:
 * Net Promoter Score (NPS): Distractor; Passive and Promoter
 
 The DAX formula is shown in the table below:
-|Index Name| DAX |
-|--------------|-------|
-| CSAT | CSAT = DIVIDE(CALCULATE(COUNTROWS('Survey Results'), OR('Survey Results'[Quality Score]=4, 'Survey Results'[Quality Score]=5)), CALCULATE(COUNTROWS('Survey Results'), 'Survey Results'[Quality Score]))
-| NPS | NPS Score = VAR _promoters = CALCULATE( COUNTROWS('Survey Results'), 'Survey Results'[Recommend Level] >= 9 ) VAR _detractors = CALCULATE( COUNTROWS('Survey Results'), 'Survey Results'[Recommend Level] <= 6 ) VAR _totalResponses = CALCULATE( COUNTROWS('Survey Results' ) ) RETURN DIVIDE( _promoters, _detractors, _totalResponses ) |
+```
+CSAT = DIVIDE(CALCULATE(COUNTROWS('Survey Results'), OR('Survey Results'[Quality Score]=4, 'Survey Results'[Quality Score]=5)), CALCULATE(COUNTROWS('Survey Results'), 'Survey Results'[Quality Score]))
+
+NPS Score =
+VAR _promoters = CALCULATE( COUNTROWS('Survey Results'), 'Survey Results'[Recommend Level] >= 9 )
+VAR _detractors = CALCULATE( COUNTROWS('Survey Results'), 'Survey Results'[Recommend Level] <= 6 )
+VAR _totalResponses = CALCULATE( COUNTROWS('Survey Results' ) )
+RETURN DIVIDE( _promoters, _detractors, _totalResponses )
+```
 
 Using responses that are quantified on scales and metrics calculated by DAX, I analyze the data using the following dashboards:
 1. Respondent General Information
